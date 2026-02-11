@@ -12,8 +12,8 @@ class CategoryPage extends StatelessWidget {
       appBar: AppBar(
         title: Row(
           children: [
-            Icon(category.icon, size: 48, color: Colors.blue),
-            SizedBox(width: 10),
+            Icon(category.icon, size: 28, color: Colors.blue),
+            const SizedBox(width: 10),
             Text(category.title),
           ],
         ),
@@ -24,17 +24,9 @@ class CategoryPage extends StatelessWidget {
         itemBuilder: (context, index) {
           final phrase = category.phrases[index];
           return ListTile(
-            dense: true,
-            visualDensity: const VisualDensity(
-              vertical: -4, // minimum practical value
-            ),
-            contentPadding: const EdgeInsets.symmetric(
-              horizontal: 16,
-              vertical: 0,
-            ),
-            title: Text(phrase.finnish, style: const TextStyle(fontSize: 18)),
+            title: Text(phrase.fi, style: const TextStyle(fontSize: 18)),
             subtitle: Text(
-              phrase.english,
+              phrase.en,
               style: const TextStyle(fontSize: 16, color: Colors.blueGrey),
             ),
           );
